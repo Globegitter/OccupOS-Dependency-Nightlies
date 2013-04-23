@@ -2154,9 +2154,11 @@
 		var oPreviousSearch = oSettings.oPreviousSearch;
 		
 		var sSearchStr = oSettings.oLanguage.sSearch;
+		//Quickfix added by Markus Padourek, 23/04/2013 12:45
+		//sSearchStr = '';
 		sSearchStr = (sSearchStr.indexOf('_INPUT_') !== -1) ?
-		  sSearchStr.replace('_INPUT_', '<input type="search" />') :
-		  sSearchStr==="" ? '<input type="search" />' : sSearchStr+' <input type="search" />';
+		  sSearchStr.replace('_INPUT_', '<input type="search" placeholder="Search..." />') :
+		  sSearchStr==="" ? '<input type="search" placeholder="Search..." />' : ' <input type="search" placeholder="Search..." />'; //removed sSearchStr+ after ':'
 		
 		var nFilter = document.createElement( 'div' );
 		nFilter.className = oSettings.oClasses.sFilter;
